@@ -6,7 +6,7 @@
 
 body {
   background-color: #000;
-  color: #ccc; /* or white if you prefer */
+  color: #ccc; 
   font-family: 'Times New Roman', Times, serif;
   margin: 0;
   padding: 0;
@@ -102,7 +102,7 @@ body {
 .profile-pic {
   width: 100px;
   height: 100px;
-  border-radius: 50%;
+  border-radius: 6px; 
   object-fit: cover;
   margin-bottom: 30px;
 }
