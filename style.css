@@ -1,26 +1,47 @@
+@font-face {
+  font-family: 'Work Sans';
+  src: url('fonts/WorkSans-Black.ttf') format('ttf'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Background behind everything */
 body {
-  background-color: #000;
-  color: #ccc; 
+  background:
+    linear-gradient(135deg, rgba(15, 15, 15, 0.95), rgba(30, 30, 30, 0.95)),
+    url('https://www.transparenttextures.com/patterns/black-linen.png');
+  background-repeat: repeat;
+  background-size: auto;
   font-family: 'Times New Roman', Times, serif;
+  color: #ccc;
   margin: 0;
   padding: 0;
 }
 
-.container {
-  display: flex;
+/* Container with frosted glass effect */
+.frosted-container {
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 1000px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 180px;
+  width: 217px;
   height: 100vh;
   background-color: #000;
   color: #fff;
@@ -29,7 +50,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Work Sans', sans-serif;
 }
 
 
@@ -60,6 +81,7 @@ body {
   transition: 0.3s;
   font-size: 14px;
   letter-spacing: 1px;
+  text-transform: uppercase
 }
 
 .sidebar ul li a.active,
@@ -89,14 +111,14 @@ body {
 }
 
 .content {
-  margin-left: 200px;
-  padding: 80px 60px;
-  max-width: 800px;
+  padding: 60px;
+  max-width: 1000px;
   color: #ccc;
   font-size: 16px;
   line-height: 1.7;
   font-family: 'Times New Roman', Times, serif;
   text-align: justify;
+  animation: fadeInGlass 0.6s ease-out;
 }
 
 .profile-pic {
@@ -110,8 +132,6 @@ body {
 .story-text p {
   margin-bottom: 20px;
   text-align: justify !important;
-}
-
 }
 
 .content h2 {
@@ -128,4 +148,155 @@ body {
   margin-bottom: 20px;
   font-family: 'Times New Roman', Times, serif;
   text-align: justify;
+}
+/* Resume Page Layout */
+.resume-block {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 60px;
+  gap: 20px;
+}
+
+.resume-block img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.resume-text h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.resume-text h4 {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.resume-text p {
+  font-size: 15px;
+  color: #ccc;
+  line-height: 1.6;
+  text-align: justify;
+}
+.resume-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.4); /* increased opacity */
+  width: 100%;
+  margin: 40px 0;
+}
+.glass-wrapper {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 40px;
+  margin: 40px auto;
+  margin-left: 220px; /* leave space for sidebar */
+  max-width: calc(100% - 260px); /* full width minus sidebar and margins */
+}
+.story-text p {
+  font-size: 15px;
+  color: #ccc;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+animation: fadeInGlass 0.5s ease-out;
+
+@keyframes fadeInGlass {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.contact-left {
+  flex: 1;
+  color: #fff;
+  font-family: 'Winner Sans', sans-serif;
+  padding-right: 40px;
+}
+
+.contact-left h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.contact-left .subhead {
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.contact-left a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.contact-right {
+  flex: 1;
+}
+
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-right .row {
+  display: flex;
+  gap: 10px;
+}
+
+.contact-right input,
+.contact-right textarea {
+  padding: 10px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid #555;
+  color: #fff;
+  border-radius: 6px;
+  font-family: 'Times New Roman', serif;
+}
+
+.contact-right button {
+  padding: 10px;
+  border: none;
+  background: #e67e22;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.linkedin-icon {
+  width: 18px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(1.1);
 }
