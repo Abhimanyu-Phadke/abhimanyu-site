@@ -300,3 +300,27 @@ animation: fadeInGlass 0.5s ease-out;
   height: 24px;
   filter: brightness(1.1);
 }
+/* Dotted underline style for 'here' links */
+.dotted-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+  cursor: pointer;
+}
+
+.dotted-link:hover {
+  opacity: 0.8;
+}
+.ps-box {
+  margin-top: 30px;
+  background-color: rgba(255, 255, 255, 0.03); /* subtle frosted look */
+  padding: 16px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.ps-box p {
+  margin-bottom: 10px;
+  color: #ccc;
+  line-height: 1.6;
+}
