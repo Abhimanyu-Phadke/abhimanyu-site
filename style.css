@@ -324,3 +324,10 @@ animation: fadeInGlass 0.5s ease-out;
   color: #ccc;
   line-height: 1.6;
 }
+.company-desc {
+  font-size: 14px;
+  color: #aaa;
+  font-style: italic;
+  margin: -8px 0 12px 0;
+}
+
