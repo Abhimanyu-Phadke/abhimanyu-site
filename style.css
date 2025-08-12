@@ -330,4 +330,26 @@ animation: fadeInGlass 0.5s ease-out;
   font-style: italic;
   margin: -8px 0 12px 0;
 }
+/* Interests page list + heading alignment */
+.story-text h3 {
+  /* same style for both section subheads */
+  margin: 1.25rem 0 0.5rem;   /* even spacing above/below heading */
+  color: inherit;             /* same color */
+  font-weight: 700;           /* match your current h3 weight */
+  /* font-size inherits your existing h3 size; keep consistent site-wide */
+}
+
+/* Make both lists use bullets and align with the h3 text */
+.story-text ul {
+  list-style-type: disc;
+  list-style-position: outside;
+  margin: 0 0 1rem 0;         /* remove extra left margin */
+  padding-left: 1.25rem;      /* controls bullet start; tweak to align perfectly */
+}
+
+/* Optional: tighten list item spacing a touch if needed */
+.story-text li {
+  margin: 0.35rem 0;
+}
+
 
