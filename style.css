@@ -372,4 +372,45 @@ animation: fadeInGlass 0.5s ease-out;
   font-family: inherit !important; 
 }
 /* ================================================ */
+/* ===== Mobile layout fixes ===== */
+@media (max-width: 820px) {
+  /* Stack the layout */
+  .sidebar {
+    position: static;     /* no longer fixed */
+    width: 100%;
+    height: auto;
+    padding: 20px 16px;
+    align-items: center;  /* center avatar + name + nav */
+  }
 
+  .profile-pic {          /* smaller avatar on mobile */
+    width: 128px;
+    height: 128px;
+    margin-bottom: 16px;
+  }
+
+  .glass-wrapper {
+    margin: 16px auto;    /* no left offset */
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .content {
+    padding: 16px;
+    text-align: left;     /* avoid narrow justified rivers */
+  }
+
+  /* Contact page: put form under the text */
+  .contact-content {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  .contact-right .row {   /* first/last name on separate lines */
+    flex-direction: column;
+  }
+
+  /* Keep everything inside the viewport */
+  img, video, iframe { max-width: 100%; height: auto; }
+  html, body { overflow-x: hidden; }
+}
